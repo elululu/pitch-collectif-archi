@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Et si on était plus forts ensemble ? — Collectif d'Architectes d'Intérieur</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --noir: #1a1a1a;
+            --gris: #6b6b6b;
+            --gris-clair: #f5f3f0;
+            --accent: #8b7355;
+            --accent-light: #c4b5a0;
+            --blanc: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--noir);
+            line-height: 1.7;
+            background: var(--blanc);
+        }
+
+        /* ─── HERO ─── */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 60px 40px;
+            background: var(--noir);
+            color: var(--blanc);
+            position: relative;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1px;
+            height: 80px;
+            background: var(--accent);
+        }
+
+        .hero-subtitle {
+            font-size: 0.85rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--accent-light);
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            font-weight: 400;
+            line-height: 1.2;
+            max-width: 800px;
+            margin-bottom: 30px;
+        }
+
+        .hero h1 em {
+            font-style: italic;
+            color: var(--accent-light);
+        }
+
+        .hero-text {
+            font-size: 1.1rem;
+            color: #999;
+            max-width: 550px;
+            font-weight: 300;
+        }
+
+        /* ─── SECTIONS ─── */
+        section {
+            padding: 100px 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            font-size: 0.75rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+            font-weight: 400;
+            line-height: 1.3;
+            margin-bottom: 40px;
+        }
+
+        h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            margin-top: 40px;
+        }
+
+        p {
+            font-size: 1.05rem;
+            color: var(--gris);
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .lead {
+            font-size: 1.2rem;
+            color: var(--noir);
+            font-weight: 400;
+        }
+
+        /* ─── FULL-WIDTH SECTIONS ─── */
+        .full-width {
+            max-width: 100%;
+            padding: 100px 40px;
+            background: var(--gris-clair);
+        }
+
+        .full-width-inner {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .dark-section {
+            background: var(--noir);
+            color: var(--blanc);
+        }
+
+        .dark-section p {
+            color: #aaa;
+        }
+
+        .dark-section h2,
+        .dark-section h3 {
+            color: var(--blanc);
+        }
+
+        .dark-section .section-label {
+            color: var(--accent-light);
+        }
+
+        /* ─── PROBLÈME CARDS ─── */
+        .pain-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .pain-card {
+            padding: 35px;
+            border: 1px solid #e5e0da;
+            border-radius: 2px;
+        }
+
+        .pain-card .emoji {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .pain-card h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .pain-card p {
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        /* ─── SOLUTION ─── */
+        .principe-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+            margin-top: 50px;
+            border: 1px solid #e5e0da;
+        }
+
+        .principe-item {
+            padding: 40px;
+            border-bottom: 1px solid #e5e0da;
+            border-right: 1px solid #e5e0da;
+        }
+
+        .principe-item:nth-child(3n) {
+            border-right: none;
+        }
+
+        .principe-item:nth-last-child(-n+3) {
+            border-bottom: none;
+        }
+
+        .principe-item .number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--accent-light);
+            font-weight: 300;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .principe-item h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .principe-item p {
+            font-size: 0.93rem;
+            margin-bottom: 0;
+        }
+
+        /* ─── CE QUI CHANGE / NE CHANGE PAS ─── */
+        .compare-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-top: 50px;
+        }
+
+        .compare-col h3 {
+            margin-top: 0;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--accent);
+            margin-bottom: 25px;
+        }
+
+        .compare-col.dark h3 {
+            border-bottom-color: var(--accent-light);
+        }
+
+        .compare-col ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .compare-col ul li {
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            font-size: 1rem;
+            font-weight: 300;
+            color: #ccc;
+        }
+
+        .compare-col ul li::before {
+            margin-right: 10px;
+            font-size: 1.1rem;
+        }
+
+        .compare-col.partage ul li::before {
+            content: '✓';
+            color: var(--accent-light);
+        }
+
+        .compare-col.garde ul li::before {
+            content: '→';
+            color: var(--accent-light);
+        }
+
+        /* ─── CHIFFRES ─── */
+        .chiffres-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .chiffre-item .number {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 300;
+            color: var(--accent);
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .chiffre-item .label {
+            font-size: 0.9rem;
+            color: var(--gris);
+            font-weight: 400;
+        }
+
+        /* ─── FAQ ─── */
+        .faq-item {
+            padding: 35px 0;
+            border-bottom: 1px solid #e5e0da;
+        }
+
+        .faq-item:first-of-type {
+            border-top: 1px solid #e5e0da;
+        }
+
+        .faq-item h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--noir);
+        }
+
+        .faq-item p {
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        /* ─── QUOTE ─── */
+        .quote-section {
+            text-align: center;
+            padding: 120px 40px;
+        }
+
+        blockquote {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.5rem, 3vw, 2.2rem);
+            font-style: italic;
+            font-weight: 400;
+            color: var(--noir);
+            max-width: 700px;
+            margin: 0 auto 30px;
+            line-height: 1.5;
+        }
+
+        blockquote::before {
+            content: '"';
+            display: block;
+            font-size: 4rem;
+            color: var(--accent-light);
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        /* ─── TIMELINE ─── */
+        .timeline {
+            margin-top: 50px;
+            position: relative;
+            padding-left: 40px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 8px;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background: var(--accent-light);
+        }
+
+        .timeline-item {
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -36px;
+            top: 8px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--accent);
+            border: 3px solid var(--blanc);
+        }
+
+        .timeline-item .time {
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .timeline-item h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .timeline-item p {
+            font-size: 0.93rem;
+            margin-bottom: 0;
+        }
+
+        /* ─── CTA ─── */
+        .cta-section {
+            text-align: center;
+            padding: 120px 40px;
+            background: var(--noir);
+            color: var(--blanc);
+        }
+
+        .cta-section h2 {
+            color: var(--blanc);
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            color: #999;
+            max-width: 500px;
+            margin: 0 auto 40px;
+        }
+
+        .cta-contact {
+            display: inline-block;
+            padding: 18px 50px;
+            border: 1px solid var(--accent-light);
+            color: var(--blanc);
+            text-decoration: none;
+            font-size: 0.85rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        .cta-contact:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+        }
+
+        /* ─── ACCORDÉONS ─── */
+        details {
+            margin-top: 15px;
+            border: 1px solid #e5e0da;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        details summary {
+            padding: 20px 25px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 500;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: var(--blanc);
+            color: var(--noir);
+            transition: background 0.2s ease;
+            list-style: none;
+        }
+
+        details summary::-webkit-details-marker {
+            display: none;
+        }
+
+        details summary::after {
+            content: '+';
+            font-size: 1.3rem;
+            font-weight: 300;
+            color: var(--accent);
+            transition: transform 0.3s ease;
+        }
+
+        details[open] summary::after {
+            content: '−';
+        }
+
+        details[open] summary {
+            background: var(--gris-clair);
+            border-bottom: 1px solid #e5e0da;
+        }
+
+        details summary:hover {
+            background: var(--gris-clair);
+        }
+
+        .details-content {
+            padding: 25px;
+            background: var(--blanc);
+        }
+
+        .details-content table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+
+        .details-content table th {
+            text-align: left;
+            padding: 10px 12px;
+            border-bottom: 2px solid var(--accent);
+            font-weight: 600;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--gris);
+        }
+
+        .details-content table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #eee;
+            color: var(--gris);
+            font-weight: 300;
+        }
+
+        .details-content table tr:last-child td {
+            border-bottom: none;
+            font-weight: 600;
+            color: var(--noir);
+        }
+
+        .details-content table td:last-child {
+            text-align: right;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .details-content .note {
+            margin-top: 15px;
+            font-size: 0.85rem;
+            color: var(--gris);
+            font-style: italic;
+        }
+
+        /* ─── FOOTER ─── */
+        footer {
+            text-align: center;
+            padding: 40px;
+            font-size: 0.8rem;
+            color: #aaa;
+        }
+
+        /* ─── SEPARATOR ─── */
+        .separator {
+            width: 50px;
+            height: 1px;
+            background: var(--accent);
+            margin: 0 auto 40px;
+        }
+
+        /* ─── HIGHLIGHT BOX ─── */
+        .highlight-box {
+            background: var(--gris-clair);
+            padding: 40px;
+            margin: 40px 0;
+            border-left: 3px solid var(--accent);
+        }
+
+        .highlight-box p {
+            margin-bottom: 0;
+            font-size: 1.05rem;
+            color: var(--noir);
+            font-weight: 400;
+        }
+
+        .pain-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        /* ─── RESPONSIVE ─── */
+        @media (max-width: 768px) {
+            .pain-grid,
+            .principe-grid,
+            .compare-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .full-width-inner [style*="grid-template-columns: repeat(3"] {
+                grid-template-columns: 1fr !important;
+            }
+
+            .chiffres-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .principe-item {
+                border-right: none !important;
+            }
+
+            section, .full-width {
+                padding: 70px 25px;
+            }
+        }
+
+        /* ─── PRINT ─── */
+        @media print {
+            .hero {
+                min-height: auto;
+                padding: 80px 40px;
+            }
+
+            .hero::after {
+                display: none;
+            }
+
+            section, .full-width {
+                padding: 50px 40px;
+            }
+
+            .cta-section {
+                padding: 60px 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ─── HERO ─── -->
+    <div class="hero">
+        <div class="hero-subtitle">Un projet pour architectes d'intérieur indépendants</div>
+        <h1>Et si on était plus forts <em>ensemble</em>&nbsp;?</h1>
+        <p class="hero-text">
+            Pas une agence. Pas une franchise. Un collectif d'indépendants qui partagent une vitrine, pas leurs projets.
+        </p>
+    </div>
+
+    <!-- ─── LE CONSTAT ─── -->
+    <section>
+        <div class="section-label">Le constat</div>
+        <h2>On aime être indépendants.<br>Mais parfois, c'est dur.</h2>
+        <p class="lead">Tu as créé ton activité. Tu as tes clients, ton style, ta liberté. Mais tu connais aussi ces réalités :</p>
+
+        <div class="pain-grid">
+            <div class="pain-card">
+                <span class="emoji">👤</span>
+                <h4>L'invisibilité</h4>
+                <p>Seul, tu es noyé sur Google, sur Instagram. Les clients te trouvent par le bouche-à-oreille… quand ils te trouvent.</p>
+            </div>
+            <div class="pain-card">
+                <span class="emoji">🏢</span>
+                <h4>Les gros projets qui passent</h4>
+                <p>Un client avec un budget de 150k€ préfère une agence qui "fait sérieux" plutôt qu'un indépendant, même talentueux.</p>
+            </div>
+            <div class="pain-card">
+                <span class="emoji">🔧</span>
+                <h4>Le suivi de chantier</h4>
+                <p>Tes clients veulent un accompagnement complet, mais tu ne fais pas de maîtrise d'œuvre. Alors ils vont voir ailleurs.</p>
+            </div>
+            <div class="pain-card">
+                <span class="emoji">😶</span>
+                <h4>La solitude</h4>
+                <p>Pas de collègue pour relire un plan, donner un avis sur une palette, ou juste boire un café et parler métier.</p>
+            </div>
+            <div class="pain-card">
+                <span class="emoji">⏱️</span>
+                <h4>Le chiffrage qui traîne</h4>
+                <p>Ton client veut un budget estimatif rapidement. Sans maître d'œuvre à portée de main, tu galères à fournir des chiffres fiables et tu perds en crédibilité.</p>
+            </div>
+            <div class="pain-card">
+                <span class="emoji">🍷</span>
+                <h4>Les projets pro hors de portée</h4>
+                <p>Un restaurant, un hôtel, un bar — ces clients veulent un collectif capable d'assurer le volume, les délais serrés et la coordination. Seul, tu ne peux même pas postuler.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── L'IDÉE ─── -->
+    <div class="full-width">
+        <div class="full-width-inner">
+            <div class="section-label">L'idée</div>
+            <h2>Un collectif. Pas une agence.</h2>
+            <p class="lead">On réunit 3 à 5 architectes d'intérieur indépendants à Rennes sous une même bannière. Chacun garde son activité, son style, ses clients, sa liberté.</p>
+            <p>Ce qu'on crée ensemble, c'est une <strong>marque commune</strong>, une <strong>vitrine physique</strong> (un local avec pignon sur rue), un <strong>site web</strong>, et une <strong>force collective</strong> qu'aucun de nous n'a seul.</p>
+
+            <div class="highlight-box">
+                <p>Pense à un cabinet d'avocats : chaque avocat a ses dossiers, sa spécialité, ses clients. Mais ils partagent un nom, une adresse, une réputation. C'est exactement ça.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ─── COMMENT ÇA MARCHE ─── -->
+    <section>
+        <div class="section-label">Comment ça marche</div>
+        <h2>Six principes simples</h2>
+
+        <div class="principe-grid">
+            <div class="principe-item">
+                <span class="number">01</span>
+                <h4>1 projet résidentiel = 1 architecte</h4>
+                <p>Un appartement, une maison ? C'est géré par un seul archi, de A à Z. Pas de partage de créativité, pas de compromis sur ta vision. Ton projet, ta patte.</p>
+            </div>
+            <div class="principe-item">
+                <span class="number">02</span>
+                <h4>Les gros projets pro, on les prend à plusieurs</h4>
+                <p>Un restaurant, un hôtel, un bar, un lieu public ? À plusieurs, on a la capacité, la crédibilité et les bras pour répondre aux gros appels d'offres. On se répartit les lots, chacun apporte sa spécialité.</p>
+            </div>
+            <div class="principe-item">
+                <span class="number">03</span>
+                <h4>Tes honoraires restent tes honoraires</h4>
+                <p>Tu factures ton client directement, en ton nom. Aucune commission sur tes projets perso. Sur les projets collectifs, répartition au prorata de l'implication de chacun.</p>
+            </div>
+            <div class="principe-item">
+                <span class="number">04</span>
+                <h4>Un maître d'œuvre intégré = chiffrage rapide</h4>
+                <p>Ton client veut un budget ? Le maître d'œuvre du collectif te fournit un chiffrage fiable en quelques jours. Plus besoin de courir après des devis. Tu gagnes en réactivité et en crédibilité.</p>
+            </div>
+            <div class="principe-item">
+                <span class="number">05</span>
+                <h4>Un local commun à Rennes</h4>
+                <p>Une adresse, une vitrine, un espace de travail partagé et un coin pour recevoir les clients. On existe dans la ville.</p>
+            </div>
+            <div class="principe-item">
+                <span class="number">06</span>
+                <h4>Deux marchés, pas un seul</h4>
+                <p>En solo tu fais du résidentiel. À plusieurs, tu accèdes aussi au marché professionnel : bars, restaurants, commerces, bureaux, lieux publics. C'est un deuxième flux de revenus.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── CE QUI CHANGE / NE CHANGE PAS ─── -->
+    <div class="full-width dark-section">
+        <div class="full-width-inner">
+            <div class="section-label">L'essentiel</div>
+            <h2>Ce que tu gardes.<br>Ce que tu gagnes.</h2>
+
+            <div class="compare-grid">
+                <div class="compare-col garde">
+                    <h3>Ce qui ne change pas</h3>
+                    <ul>
+                        <li>Ton statut (auto-entreprise, SASU, EURL…)</li>
+                        <li>Tes clients existants</li>
+                        <li>Ton style et ta direction artistique</li>
+                        <li>Tes honoraires — intégralement</li>
+                        <li>Ta liberté de prendre ou refuser un projet</li>
+                        <li>Tes projets perso à côté du collectif</li>
+                    </ul>
+                </div>
+                <div class="compare-col partage">
+                    <h3>Ce que tu gagnes</h3>
+                    <ul>
+                        <li>Une adresse physique à Rennes</li>
+                        <li>Un site web commun bien référencé</li>
+                        <li>Une image de marque collective</li>
+                        <li>Des projets entrants via le collectif</li>
+                        <li>Un maître d'œuvre + chiffrage rapide</li>
+                        <li>L'accès aux projets pro (bars, restos, commerces…)</li>
+                        <li>La capacité de répondre aux gros chantiers</li>
+                        <li>Des confrères pour échanger au quotidien</li>
+                        <li>Des events, portes ouvertes, visibilité locale</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ─── LES CHIFFRES ─── -->
+    <section>
+        <div class="section-label">En pratique</div>
+        <h2>Combien ça coûte, combien ça rapporte</h2>
+        <p class="lead">On joue la transparence totale. Voici les vrais chiffres, détaillés. Clique pour voir le détail de chaque poste.</p>
+
+        <div class="chiffres-grid" style="margin-top: 40px;">
+            <div class="chiffre-item">
+                <span class="number">300-550€</span>
+                <span class="label">par mois / par membre à 3<br>(local + site + com)</span>
+            </div>
+            <div class="chiffre-item">
+                <span class="number">~44€</span>
+                <span class="label">pour créer l'asso loi 1901<br>(publication au Journal Officiel)</span>
+            </div>
+            <div class="chiffre-item">
+                <span class="number">10%</span>
+                <span class="label">d'apport d'affaire si un membre<br>te redirige un client</span>
+            </div>
+        </div>
+
+        <!-- Accordéon : Frais de lancement -->
+        <details style="margin-top: 50px;">
+            <summary>Frais de lancement (une seule fois) — voir le détail</summary>
+            <div class="details-content">
+                <table>
+                    <tr>
+                        <th>Poste</th>
+                        <th>Coût</th>
+                    </tr>
+                    <tr>
+                        <td>Création asso loi 1901 (publication JO)</td>
+                        <td>~44€</td>
+                    </tr>
+                    <tr>
+                        <td>Identité visuelle (logo, charte graphique)</td>
+                        <td>500 – 2 000€</td>
+                    </tr>
+                    <tr>
+                        <td>Site web (création)</td>
+                        <td>0€ <em style="font-size:0.85em;color:var(--accent);">— pris en charge en interne</em></td>
+                    </tr>
+                    <tr>
+                        <td>Premiers supports com (cartes, flyers)</td>
+                        <td>200 – 500€</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Total lancement</strong></td>
+                        <td><strong>~750 – 2 500€</strong></td>
+                    </tr>
+                </table>
+                <p class="note">Soit ~250 à 830€ par personne à 3 membres. Le site web est créé et géré en interne par l'un des membres (compétences web/design confirmées), ce qui élimine ce poste de dépense.</p>
+            </div>
+        </details>
+
+        <!-- Accordéon : Frais mensuels -->
+        <details>
+            <summary>Frais mensuels récurrents — voir le détail</summary>
+            <div class="details-content">
+                <table>
+                    <tr>
+                        <th>Poste</th>
+                        <th>Coût / mois</th>
+                    </tr>
+                    <tr>
+                        <td>Loyer local 35-50m² à Rennes</td>
+                        <td>500 – 1 000€</td>
+                    </tr>
+                    <tr>
+                        <td>Charges locatives</td>
+                        <td>80 – 150€</td>
+                    </tr>
+                    <tr>
+                        <td>Électricité + chauffage</td>
+                        <td>80 – 120€</td>
+                    </tr>
+                    <tr>
+                        <td>Internet fibre</td>
+                        <td>35 – 45€</td>
+                    </tr>
+                    <tr>
+                        <td>Assurance du local</td>
+                        <td>30 – 50€</td>
+                    </tr>
+                    <tr>
+                        <td>Ménage (1x/semaine)</td>
+                        <td>100 – 150€</td>
+                    </tr>
+                    <tr>
+                        <td>Site web (hébergement, domaine)</td>
+                        <td>15 – 40€</td>
+                    </tr>
+                    <tr>
+                        <td>Communication (Google Ads, Insta, SEO)</td>
+                        <td>100 – 300€</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Total mensuel</strong></td>
+                        <td><strong>~940 – 1 855€</strong></td>
+                    </tr>
+                </table>
+                <table style="margin-top: 20px;">
+                    <tr>
+                        <th>Nombre de membres</th>
+                        <th>Coût / tête / mois</th>
+                    </tr>
+                    <tr>
+                        <td>À 3 membres</td>
+                        <td>310 – 620€</td>
+                    </tr>
+                    <tr>
+                        <td>À 4 membres</td>
+                        <td>235 – 465€</td>
+                    </tr>
+                    <tr>
+                        <td>À 5 membres</td>
+                        <td>190 – 370€</td>
+                    </tr>
+                </table>
+                <p class="note"><strong>Analyse loyers commerciaux à Rennes (2024-2025) :</strong><br>
+                    Le marché locatif commercial rennais varie fortement selon l'emplacement et le type de bien :<br>
+                    • <strong>Centre-ville premium</strong> (rue Le Bastard, rue de la Monnaie, place de la République) : 200 – 400€/m²/an, soit 17 – 33€/m²/mois. Ce sont des emplacements retail « prime » avec fort passage — <em>pas notre cible</em>.<br>
+                    • <strong>Centre-ville secondaire</strong> (rues adjacentes, quais de Vilaine, rue Saint-Hélier, rue de Paris) : 120 – 200€/m²/an, soit 10 – 17€/m²/mois. <em>Zone idéale : visible, accessible, abordable.</em><br>
+                    • <strong>Quartiers péri-centre</strong> (Thabor, Sainte-Thérèse, Colombier périphérie, Cleunay) : 80 – 150€/m²/an, soit 7 – 13€/m²/mois.<br>
+                    • <strong>Zones d'activité / périphérie</strong> : 60 – 100€/m²/an.<br><br>
+                    <strong>Notre hypothèse :</strong> un local de 35-50m² en centre-ville secondaire ou péri-centre, type ancienne boutique ou RDC sur rue. Budget réaliste : <strong>500 – 1 000€/mois</strong> (soit 10-20€/m²/mois pour 50m²). À comparer : le prix résidentiel moyen à Rennes est de ~15€/m²/mois (source : MeilleursAgents 2025), le commercial sur un axe secondaire se situe dans la même fourchette.<br>
+                    <em>Conseil : prospecter les rues de Paris, Saint-Hélier, Antrain, Fougères, ou les quais de la Vilaine pour le meilleur rapport visibilité/prix.</em></p>
+            </div>
+        </details>
+
+        <!-- Accordéon : Ce que ça rapporte -->
+        <details>
+            <summary>Ce que ça peut rapporter — scénario prudent année 1</summary>
+            <div class="details-content">
+                <table>
+                    <tr>
+                        <th>Source de projets en plus</th>
+                        <th>Honoraires estimés / an</th>
+                    </tr>
+                    <tr>
+                        <td>Clients via le site web commun (1-2 projets)</td>
+                        <td>3 000 – 12 000€</td>
+                    </tr>
+                    <tr>
+                        <td>Clients via le local / la vitrine (1-3 projets)</td>
+                        <td>3 000 – 18 000€</td>
+                    </tr>
+                    <tr>
+                        <td>Projets pro collectifs — ta part (0-1 projet)</td>
+                        <td>0 – 15 000€</td>
+                    </tr>
+                    <tr>
+                        <td>Redirection d'un autre membre (0-2 projets)</td>
+                        <td>0 – 10 000€</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Total revenus supplémentaires estimés</strong></td>
+                        <td><strong>6 000 – 55 000€</strong></td>
+                    </tr>
+                </table>
+                <table style="margin-top: 20px;">
+                    <tr>
+                        <th>Bilan annuel</th>
+                        <th>Montant</th>
+                    </tr>
+                    <tr>
+                        <td>Ton coût annuel (à 3 membres)</td>
+                        <td>3 700 – 7 400€</td>
+                    </tr>
+                    <tr>
+                        <td>Revenu supplémentaire minimum estimé</td>
+                        <td>6 000€</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Rentable dès…</strong></td>
+                        <td><strong>1 à 2 projets</strong></td>
+                    </tr>
+                </table>
+                <p class="note">Scénario prudent. Les revenus dépendent de la visibilité du collectif et de la dynamique commerciale. Les projets pro (bars, restaurants) accélèrent fortement la rentabilité. L'année 2 sera meilleure que l'année 1 grâce au bouche-à-oreille et au référencement.</p>
+            </div>
+        </details>
+
+        <!-- Accordéon : Honoraires de référence -->
+        <details>
+            <summary>Honoraires de référence du métier — pour se repérer</summary>
+            <div class="details-content">
+                <table>
+                    <tr>
+                        <th>Type de projet</th>
+                        <th>Honoraires typiques</th>
+                    </tr>
+                    <tr>
+                        <td>Rénovation appartement 50m²</td>
+                        <td>3 000 – 6 000€</td>
+                    </tr>
+                    <tr>
+                        <td>Rénovation maison 100m²</td>
+                        <td>6 000 – 15 000€</td>
+                    </tr>
+                    <tr>
+                        <td>Rénovation haut de gamme</td>
+                        <td>15 000 – 35 000€</td>
+                    </tr>
+                    <tr>
+                        <td>Restaurant / bar (150-400k€ travaux)</td>
+                        <td>15 000 – 50 000€</td>
+                    </tr>
+                    <tr>
+                        <td>Hôtel / gîte (300k-1M€ travaux)</td>
+                        <td>30 000 – 100 000€</td>
+                    </tr>
+                    <tr>
+                        <td>Commerce / bureau (50-200k€ travaux)</td>
+                        <td>5 000 – 25 000€</td>
+                    </tr>
+                </table>
+                <p class="note">Basé sur des honoraires de 8 à 15% du budget travaux selon la complexité. Le maître d'œuvre facture ses honoraires séparément (8-12% du montant travaux).</p>
+            </div>
+        </details>
+
+        <div class="highlight-box" style="margin-top: 40px;">
+            <p><strong>En résumé :</strong> même dans le scénario le plus prudent, 1 à 2 petits projets résidentiels gagnés grâce au collectif suffisent à couvrir ton coût annuel. Un seul projet pro (restaurant, commerce) rend l'année très largement rentable.</p>
+        </div>
+    </section>
+
+    <!-- ─── CITATION ─── -->
+    <div class="quote-section">
+        <blockquote>
+            Seul on va plus vite, ensemble on va plus loin.
+        </blockquote>
+        <p style="color: var(--gris); font-size: 0.9rem;">Et avec un local à Rennes, on va aussi plus visiblement.</p>
+    </div>
+
+    <!-- ─── MARCHÉ PRO ─── -->
+    <div class="full-width dark-section">
+        <div class="full-width-inner">
+            <div class="section-label">Le game changer</div>
+            <h2>À plusieurs, on accède<br>au marché professionnel.</h2>
+            <p class="lead" style="color: #ccc;">Seul, un restaurateur ou un promoteur ne te prend pas au sérieux. À 3 ou 4, avec un maître d'œuvre, tu deviens une force de frappe crédible.</p>
+
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 50px;">
+                <div style="text-align: center; padding: 40px 25px; border: 1px solid rgba(255,255,255,0.1);">
+                    <div style="font-size: 2.5rem; margin-bottom: 15px;">🍽️</div>
+                    <h4 style="color: #fff; font-size: 1rem; margin-bottom: 10px;">Restaurants & Bars</h4>
+                    <p style="font-size: 0.9rem; margin: 0;">Concept, aménagement, identité du lieu. À plusieurs on gère les délais serrés et le volume.</p>
+                </div>
+                <div style="text-align: center; padding: 40px 25px; border: 1px solid rgba(255,255,255,0.1);">
+                    <div style="font-size: 2.5rem; margin-bottom: 15px;">🏨</div>
+                    <h4 style="color: #fff; font-size: 1rem; margin-bottom: 10px;">Hôtels & Gîtes</h4>
+                    <p style="font-size: 0.9rem; margin: 0;">20 chambres à concevoir ? On se répartit les étages. Même direction artistique, plusieurs mains.</p>
+                </div>
+                <div style="text-align: center; padding: 40px 25px; border: 1px solid rgba(255,255,255,0.1);">
+                    <div style="font-size: 2.5rem; margin-bottom: 15px;">🏛️</div>
+                    <h4 style="color: #fff; font-size: 1rem; margin-bottom: 10px;">Lieux publics & Commerces</h4>
+                    <p style="font-size: 0.9rem; margin: 0;">Boutiques, bureaux, espaces publics. Le collectif inspire confiance aux décideurs et aux promoteurs.</p>
+                </div>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.05); padding: 35px; margin-top: 50px; border-left: 3px solid var(--accent-light);">
+                <p style="color: #ddd; margin-bottom: 10px;"><strong style="color: #fff;">Le scénario concret :</strong></p>
+                <p style="color: #aaa; margin-bottom: 0; font-size: 0.95rem;">Un restaurateur veut ouvrir un lieu de 200m² à Rennes. Budget travaux : 300k€. Seul, tu n'aurais jamais eu l'appel. En collectif, vous répondez à 3 : un qui fait le concept / l'identité, un qui dessine l'espace et le mobilier, le maître d'œuvre qui chiffre et suit le chantier. Honoraires totaux : 36 000€. Chacun facture sa part. Le client a un interlocuteur principal et une équipe derrière. <strong style="color: #fff;">Tout le monde y gagne.</strong></p>
+            </div>
+
+            <h3 style="margin-top: 50px;">Le chiffrage rapide : ton arme secrète</h3>
+            <p>Aujourd'hui, quand ton client te demande « ça va coûter combien les travaux ? », tu es coincé. Tu appelles des artisans, tu attends des devis, ça prend 3 semaines. Le client s'impatiente.</p>
+            <p>Avec le maître d'œuvre du collectif, tu as un <strong style="color: #fff;">chiffrage estimatif en quelques jours</strong>. Ton client a une réponse rapide et fiable. Tu passes pour un pro ultra-réactif. Et le projet avance sans temps mort.</p>
+        </div>
+    </div>
+
+    <!-- ─── POURQUOI ÇA MARCHE ─── -->
+    <div class="full-width">
+        <div class="full-width-inner">
+            <div class="section-label">Pourquoi ça marche</div>
+            <h2>Ce n'est pas une utopie.<br>C'est un modèle éprouvé.</h2>
+
+            <h3>Les avocats le font depuis toujours</h3>
+            <p>Des indépendants, chacun avec ses clients et sa spécialité, regroupés sous un même cabinet. Personne ne trouve ça bizarre. Pourquoi pas nous ?</p>
+
+            <h3>La complémentarité tue la concurrence</h3>
+            <p>On ne cherche pas 3 archis qui font la même chose. On cherche des <strong>spécialités différentes</strong> : un profil résidentiel haut de gamme, un profil contemporain / jeune, un profil commercial / retail, un profil rénovation patrimoniale… Le client choisit son style. Pas de rivalité.</p>
+
+            <h3>Deux marchés valent mieux qu'un</h3>
+            <p>Le résidentiel, c'est bien. Mais le <strong>marché professionnel</strong> (restaurants, bars, hôtels, commerces, bureaux) représente des budgets 3 à 10 fois supérieurs. Seul, tu n'y accèdes pas. En collectif avec un maître d'œuvre, tu deviens un interlocuteur crédible face aux promoteurs, restaurateurs et commerçants. C'est un levier de croissance énorme.</p>
+
+            <h3>Rennes est le bon terrain</h3>
+            <p>Ville en pleine croissance, forte demande en rénovation et en ouvertures de commerces/restaurants, clientèle CSP+ dans les quartiers centraux, et <strong>aucun collectif d'archis d'intérieur n'y existe</strong>. On serait les premiers.</p>
+
+            <h3>Le numérique ne suffit plus</h3>
+            <p>Tout le monde a un site et un Insta. Mais un <strong>lieu physique</strong>, une vitrine avec des matériaux, des planches déco, un espace où le client s'assoit — ça, c'est ce qui crée la confiance. Et la confiance, c'est ce qui fait signer.</p>
+        </div>
+    </div>
+
+    <!-- ─── FAQ / OBJECTIONS ─── -->
+    <section>
+        <div class="section-label">Questions légitimes</div>
+        <h2>Tes doutes sont normaux.<br>Voici les réponses.</h2>
+
+        <div class="faq-item">
+            <h4>« Et si un membre du collectif me pique mes clients ? »</h4>
+            <p>Chacun a un style et une spécialité différente. Si un client te contacte, il est à toi. La charte est claire là-dessus. Et on ne choisit pas des profils concurrents — on choisit des profils complémentaires.</p>
+        </div>
+
+        <div class="faq-item">
+            <h4>« Je ne veux pas perdre mon identité. »</h4>
+            <p>Tu ne la perds pas. Le site du collectif présente chaque membre individuellement — avec ton nom, ton portfolio, ton style. Le collectif est une vitrine, pas un moule. Tu restes toi.</p>
+        </div>
+
+        <div class="faq-item">
+            <h4>« Et si ça ne marche pas ? »</h4>
+            <p>Pas de piège. Pas de structure lourde. Tu t'engages mois par mois. Si tu veux partir, tu pars avec un préavis raisonnable. Aucun capital investi, aucune dette commune, aucun risque financier majeur.</p>
+        </div>
+
+        <div class="faq-item">
+            <h4>« Comment on décide qui prend quel projet ? »</h4>
+            <p>Si le client contacte un archi en particulier → c'est le sien. Si un projet arrive "au collectif" (via le site ou le local) → on propose le profil le plus adapté selon le style demandé, la géographie et la disponibilité. C'est simple et transparent.</p>
+        </div>
+
+        <div class="faq-item">
+            <h4>« Je suis en auto-entreprise, c'est compatible ? »</h4>
+            <p>Oui. Tous les statuts sont compatibles. Tu ne changes rien à ton activité juridique. Le collectif existe via une simple association loi 1901 qui gère le local et les frais communs. Toi, tu restes exactement comme tu es.</p>
+        </div>
+
+        <div class="faq-item">
+            <h4>« 250-400€/mois, ça fait cher. »</h4>
+            <p>C'est le prix d'un coworking — sauf qu'ici, c'est un local à TON nom (collectif), avec une vitrine sur rue, un espace client dédié, et une source de projets en plus. Un seul projet décroché via le collectif rembourse l'année.</p>
+        </div>
+    </section>
+
+    <!-- ─── LES ÉTAPES ─── -->
+    <div class="full-width">
+        <div class="full-width-inner">
+            <div class="section-label">Prochaines étapes</div>
+            <h2>Comment on démarre</h2>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="time">Étape 1 — Maintenant</div>
+                    <h4>On se rencontre</h4>
+                    <p>Un café, un échange informel. On parle de nos activités, de nos envies, de ce qu'on attend d'un collectif. Zéro engagement.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="time">Étape 2 — Dans quelques semaines</div>
+                    <h4>On se met d'accord</h4>
+                    <p>Si ça colle humainement, on rédige une charte simple (1 page) et on crée l'asso. On choisit un nom, une identité.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="time">Étape 3 — Sous 2-3 mois</div>
+                    <h4>On lance le site web</h4>
+                    <p>Un site commun, pro, bien référencé, qui présente chaque membre et permet aux clients de déposer un projet.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="time">Étape 4 — Sous 4-6 mois</div>
+                    <h4>On trouve le local</h4>
+                    <p>Quand le collectif tourne et que la dynamique est là, on cherche notre lieu à Rennes. Vitrine sur rue, espace de travail, coin client.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ─── CTA ─── -->
+    <div class="cta-section">
+        <div class="separator" style="background: var(--accent-light);"></div>
+        <h2>Ça t'intéresse ?</h2>
+        <p>Pas besoin de dire oui tout de suite. Juste un café pour en parler, sans engagement. Si tu te reconnais dans cette vision, on trouvera comment avancer ensemble.</p>
+        <a href="mailto:" class="cta-contact">Prenons un café</a>
+    </div>
+
+    <!-- ─── FOOTER ─── -->
+    <footer>
+        <p>Document confidentiel — Février 2026</p>
+    </footer>
+
+</body>
+</html>
